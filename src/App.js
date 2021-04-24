@@ -20,25 +20,17 @@ class App extends Component {
   render() {
     return (
       <>
-          {/* <Navbar bg="dark" variant="dark">
-            <Navbar.Brand href="#home">CardGame</Navbar.Brand>
-            <Nav className="mr-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#features">Features</Nav.Link>
-              <Nav.Link href="#pricing">About</Nav.Link>
-            </Nav>
-            <Form inline>
-              <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-              <Button variant="outline-info">Search</Button>
-            </Form>
-        </Navbar> */}
-      
-        <div className="Game">
+        <div className="game">
             <div>
             {!this.state.startButton ?
-              <div style={{marginTop:150, marginLeft:250}}>
-                <h3>Card Game</h3>
-                <p>This is a fun game in which, you have to match all the cards to win the game.</p>
+              <div>
+                <h1 className="header" >Card Memory Game</h1>
+                <h3 className="rule">Rule:</h3>
+                <h4 className="first">
+                  <pre>This is a fun game in which,
+                  you have to make a pair of all the cards to win the game.
+                  </pre>
+                </h4>
               </div>
               : <div></div>
             }
@@ -46,18 +38,11 @@ class App extends Component {
 
           <div>
             {!this.state.startButton ?
-              <p style={{marginLeft:250}}><Button variant="primary" onClick={this.handleClick}>Start Game</Button></p>
+              <p style={{marginLeft:370}}><Button variant="info" onClick={this.handleClick}>Ready to Play</Button></p>
               :<Grid />
             }
           </div>
         </div>
-
-        {/* <footer>
-        <div className="text-center p-2">
-            © 2021 Copyright: fun game   
-        </div>
-        </footer>
-         */}
       </>
     );
   }

@@ -1,5 +1,5 @@
 import React from "react";
-import '../App.css';
+// import './Style.css';
 class Card extends React.Component {
     constructor(props) {
         super(props)
@@ -12,8 +12,7 @@ class Card extends React.Component {
       return (
         <div className={"pokemon-card" + (!this.props.close ? 'open' : '') + (this.props.complete ? 'match' : '')} onClick={() => this.clicked(this.props.img)}>
           <div className="inner">
-          <div className="front"> 
-          {/* <img src={this.props.img}/>  */}
+          <div className="front">
           </div>
           <div className="back">
             <img src={this.props.img}/>

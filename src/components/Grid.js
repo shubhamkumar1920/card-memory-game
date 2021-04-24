@@ -1,6 +1,7 @@
 import '../App.css';
 import React from "react";
 import Card from "./Card";
+// import './Style.css'
 
 class Grid extends React.Component {
   constructor(props) {
@@ -18,7 +19,6 @@ class Grid extends React.Component {
       this.startClock();
     }
 
-    
     startClock(){
         this.clock=setInterval(this.tick.bind(this),1000);
     }
@@ -102,13 +102,13 @@ class Grid extends React.Component {
 
     render(){
       return (
-        <div>
-            <div className="Timer">
-                {this.state.counter===8 ? <h3>You won the game in {this.state.second} seconds ☺ </h3>: <h3>Time : {this.state.second} seconds</h3> }
-            </div>
-            
-            <div className="cards" >{
-              this.state.lastArray.map((img, index) => {
+        <div className="grid">
+          <div className="Timer">
+        {this.state.counter===8 ? <h3>You won the game in {this.state.second} seconds ☺ </h3>: <h3>Time : {this.state.second} seconds</h3> }
+      </div>
+           
+            <div className="cards" >
+              {this.state.lastArray.map((img, index) => {
                 return <Card img={img.name} click={() => {this.handleClick(img.name,index)}} close={img.close} complete={img.complete}/>
               })
             }
